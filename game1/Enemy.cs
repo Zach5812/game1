@@ -1,4 +1,4 @@
-class Enemy
+public class Enemy
 {
     public string Name;
     public int Health;
@@ -15,4 +15,15 @@ class Enemy
         int AttackListPos = rand.Next(0, AttackList.Count);
         return AttackList[AttackListPos];
     }
+
+
+
+    public void PerformAttack(Enemy Target, Attack ChosenAttack)
+    {
+        
+        Target.Health = Target.Health - ChosenAttack.DamageAmount;
+        Console.WriteLine($"{Name} attacks {Target.Name} with {ChosenAttack.Name}, dealing {ChosenAttack.DamageAmount} damage and reducing {Target.Name}'s health to {Target.Health}!!");
+    }
+
+
 }
